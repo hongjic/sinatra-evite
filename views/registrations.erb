@@ -1,0 +1,26 @@
+<h3>These are the All Registrations!</h3>
+
+<h4>Make Registration</h4>
+<form action="/registrations" method="POST">
+  <input type="text" name="registra[person]" value="Your Name" />
+  <input type="text" name="registra[event_id]" value="event ID" />
+  <input type="text" name="registra[status]" value="Status" />
+  <input type="submit" value="Register" />
+</form>
+
+
+<table>
+  <tr><th>Person</th><th>Event</th><th>Status</th></tr>
+
+  <% @regis_info.each do |r| %>
+  <tr>
+    <td><%= r[:person]%></td>
+    <td><%= r[:event]%></td>
+    <td><%= r[:status]%></td>
+  </tr>
+  <%end%>
+
+</table>
+
+<a href="/">Back to Home Page.</a>
+<h1> </h1>

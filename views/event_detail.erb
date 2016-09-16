@@ -1,0 +1,16 @@
+<h3>Event <%=@event.id%>: <%=@event.name%></h3>
+
+<h4> Registrants: </h4>
+<table>
+  <tr>
+    <th>Name</th><th>Status</th>
+  </tr>
+  <tr>
+    <% @registra_list.each do |registra| %>
+    <td><%=registra[:name]%></td><td><%=registra[:status]%></td>
+    <% end %>
+  </tr>
+</table>
+
+<a href="/events">Back to Events List.</a>
+<h1> </h1>

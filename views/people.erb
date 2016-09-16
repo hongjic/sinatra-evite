@@ -1,0 +1,28 @@
+<h3>These are the Registered People!</h3>
+
+<h4>Add New People</h4>
+<form action="/people" method="POST">
+  <input type="text" name="person[name]" value="name" />
+  <input type="date" name="person[birth]" value="date_of_birth" />
+  <input type="gender" name="person[gender]" value="male/female" />
+  <input type="zipcode" name="person[zipcode]" value="zipcode"/>
+  <input type="submit" value="Add" />
+</form>
+
+<table>
+  <tr><th>Name</th><th>Birthday</th><th>Gender</th><th>Zipcode</th></tr>
+
+  <% @people.each do |person| %>
+  <tr>
+    <td><%= person.name%></td>
+    <td><%= person.birth%></td>
+    <td><%= person.gender ? "male" : "female"%></td>
+    <td><%= person.zipcode%></td>
+  </tr>
+  <%end%>
+  
+</table>
+
+
+<a href="/">Back to Home Page.</a>
+<h1> </h1>
